@@ -1,11 +1,21 @@
 import React from 'react';
 
 function Cards() {
-    return (
-        <div>
-            <h1>Bonjour!!!</h1>
-        </div>
-    )
+  return (
+    <div className="buttons">
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+      <button></button>
+    </div>
+  )
 }
 
 export default Cards 
