@@ -5,8 +5,8 @@ import Title from "./Components/Title";
 function App() {
   return (
     <div className="App">
-    <Title />
-    <Cards />
+      <Title />
+      <Cards />
     </div>
   );
 }

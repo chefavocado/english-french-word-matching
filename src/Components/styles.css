@@ -1,6 +1,8 @@
 body {
-	background-color: rgb(118, 231, 127);
+	background-color:#3D348B;
 	font-family: 'Roboto', sans-serif;
+	display: flex;
+	justify-content: center;
 }
 
 .title-container {
@@ -11,12 +13,46 @@ body {
 	font-size: 5rem;
 	margin-bottom: 0;
 	display: flex;
+	padding: 1rem;
 	justify-content: center;
 	text-align:center;
+	color: #221e4e;
 }
 
 .game-description {
 	display: flex;
 	justify-content: center;
 	text-align:center;
+	color: #221e4e;
+}
+
+button {
+	height: 8rem;
+	width: 13rem;
+	border-radius:15px;
+	margin: 10px;
+	background-color: #F7B801;
+	border: 0;
+	font-size: 125%;
+}
+
+button:hover {
+	background-color: #F18701;
+	transition: .25s;
+}
+
+.button-container {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 3rem;
+	margin-top: 3rem;
+}
+
+.button-wrapper {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	justify-content: center;
+	text-align: center;
+	margin: auto;
+	margin-bottom: 5rem;
 }
