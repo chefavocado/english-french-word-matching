@@ -31,13 +31,14 @@ button {
 	width: 13rem;
 	border-radius:15px;
 	margin: 10px;
-	background-color: #F7B801;
+	background-color: #ffd7a2;
 	border: 0;
 	font-size: 125%;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.15) 0px 3px 6px;
 }
 
 button:hover {
-	background-color: #F18701;
+	background-color: #f8e3c7;
 	transition: .25s;
 }
 
