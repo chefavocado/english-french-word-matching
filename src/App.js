@@ -1,15 +1,15 @@
-import './App.css';
-import Cards from "./Components/Cards";
-import Title from "./Components/Title";
+import { Fragment } from "react";
+
+import Title from "./components/Layout/Title";
+import Words from "./components/Words/Words";
 
 function App() {
   return (
-    <div className="App">
+    <Fragment>
       <Title />
-      <Cards />
-    </div>
+      <Words />
+    </Fragment>
   );
 }
 
 export default App;
- 
