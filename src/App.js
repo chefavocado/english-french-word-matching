@@ -11,20 +11,22 @@ function App() {
   const closeModalHandler = () => {
     setModalIsShown(false);
     setClearedCards({});
+    window.location.reload();
   };
 
   const showModalHandler = () => {
     setModalIsShown(true);
   };
 
-  console.log(modalIsShown);
   return (
     <Fragment>
-      {modalIsShown && (
-        <Bravo onClose={closeModalHandler} />
-      )}
+      {modalIsShown && <Bravo onClose={closeModalHandler} />}
       <Title />
-      <Words showModal={showModalHandler} clearedCards={clearedCards}/>
+      <Words
+        showModal={showModalHandler}
+        clearedCards={clearedCards}
+        setClearedCards={setClearedCards}
+      />
     </Fragment>
   );
 }

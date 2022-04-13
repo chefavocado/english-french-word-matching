@@ -6,11 +6,12 @@ import wordsEn from "../../data/english";
 import wordsFr from "../../data/french";
 
 const Words = props => {
-  // const [showModal, setShowModal] = useState(false);
   const [clickedCards, setClickedCards] = useState([]);
-  const [clearedCards, setClearedCards] = useState({});
+  // const [clearedCards, setClearedCards] = useState({});
   const [shuffledWordsEn, setShuffledWordsEn] = useState([]);
   const [shuffledWordsFr, setShuffledWordsFr] = useState([]);
+
+  const clearedCardsObj = props.setClearedCards;
 
   const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
@@ -34,17 +35,20 @@ const Words = props => {
     return Object.keys(object).find(key => object[key] === value);
   };
 
-  const evaluate = (props) => {
+  const evaluate = props => {
     const [first, second] = clickedCards;
+
     if (
       translationMap[`${first}`] === second ||
       getKeyByValue(translationMap, `${first}`) === second
     ) {
-      setClearedCards(prev => ({ ...prev, [first]: true, [second]: true }));
+      clearedCardsObj(prev => ({
+        ...prev,
+        [first]: true,
+        [second]: true,
+      }));
     }
   };
-
-  console.log(clearedCards);
 
   const cardClickHandler = e => {
     const word = e.target.id;
@@ -67,19 +71,19 @@ const Words = props => {
   }, []);
 
   useEffect(() => {
-    const clearedWordsLength = Object.keys(clearedCards).length;
+    const clearedWordsLength = Object.keys(props.clearedCards).length;
 
-    if(clearedWordsLength === 10) {
+    if (clearedWordsLength === 10) {
       return props.showModal(true);
     }
-  }, [clearedCards]);
+  }, [props.clearedCards]);
 
   const mappedWordsEn = shuffledWordsEn.map(wordEn => (
     <Card
       className={
-        !clearedCards[wordEn.word] ? classes.word : classes["word-paired"]
+        !props.clearedCards[wordEn.word] ? classes.word : classes["word-paired"]
       }
-      onClick={!clearedCards[wordEn.word] ? cardClickHandler : null}
+      onClick={!props.clearedCards[wordEn.word] ? cardClickHandler : null}
       key={wordEn.key}
     >
       <li id={wordEn.word}>{wordEn.word}</li>
@@ -89,9 +93,9 @@ const Words = props => {
   const mappedWordsFr = shuffledWordsFr.map(wordFr => (
     <Card
       className={
-        !clearedCards[wordFr.word] ? classes.word : classes["word-paired"]
+        !props.clearedCards[wordFr.word] ? classes.word : classes["word-paired"]
       }
-      onClick={!clearedCards[wordFr.word] ? cardClickHandler : null}
+      onClick={!props.clearedCards[wordFr.word] ? cardClickHandler : null}
       key={wordFr.key}
     >
       <li id={wordFr.word}>{wordFr.word}</li>
