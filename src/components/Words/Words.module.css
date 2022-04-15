@@ -1,23 +1,28 @@
 .word {
   text-align: center;
 }
-.word :hover {
-  font-weight: 900;
-  color: rgb(6, 172, 1);
-  transition: 0.5s;
+
+.word:hover {
+  background-color: rgb(255, 247, 102);
+  transition: 0.4s;
 }
 
-.word-paired {
+.word__clicked {
   text-align: center;
-  font-weight: 900;
+  opacity: 80%;
+}
+
+.word__paired {
+  text-align: center;
   color: rgb(6, 172, 1);
   opacity: 45%;
+  transition: 0.3s;
 }
 
-.text-clicked {
+.clicked {
   text-align: center;
-  font-weight: 900;
-  color: rgb(34, 163, 255);
+  color: red;
+  border-radius: 15px;
 }
 
 .row {

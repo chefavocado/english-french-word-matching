@@ -7,9 +7,9 @@ import wordsFr from "../../data/french";
 
 const Words = props => {
   const [clickedCards, setClickedCards] = useState([]);
-  // const [clearedCards, setClearedCards] = useState({});
   const [shuffledWordsEn, setShuffledWordsEn] = useState([]);
   const [shuffledWordsFr, setShuffledWordsFr] = useState([]);
+  const [cardClass, setCardClass] = useState(classes.word);
 
   const clearedCardsObj = props.setClearedCards;
 
@@ -47,11 +47,19 @@ const Words = props => {
         [first]: true,
         [second]: true,
       }));
+    } else if (
+      translationMap[`${first}`] !== second ||
+      getKeyByValue(translationMap, `${first}`) !== second
+    ) {
+      alert("Invalid match. Try again :)");
     }
   };
 
+  console.log(clickedCards);
+
   const cardClickHandler = e => {
     const word = e.target.id;
+
     if (clickedCards.length === 1) {
       setClickedCards(prev => [...prev, word]);
     } else {
@@ -81,7 +89,9 @@ const Words = props => {
   const mappedWordsEn = shuffledWordsEn.map(wordEn => (
     <Card
       className={
-        !props.clearedCards[wordEn.word] ? classes.word : classes["word-paired"]
+        !props.clearedCards[wordEn.word]
+          ? classes.word
+          : classes["word__paired"]
       }
       onClick={!props.clearedCards[wordEn.word] ? cardClickHandler : null}
       key={wordEn.key}
@@ -93,7 +103,9 @@ const Words = props => {
   const mappedWordsFr = shuffledWordsFr.map(wordFr => (
     <Card
       className={
-        !props.clearedCards[wordFr.word] ? classes.word : classes["word-paired"]
+        !props.clearedCards[wordFr.word]
+          ? classes.word
+          : classes["word__paired"]
       }
       onClick={!props.clearedCards[wordFr.word] ? cardClickHandler : null}
       key={wordFr.key}
