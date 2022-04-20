@@ -9,7 +9,6 @@ const Words = props => {
   const [clickedCards, setClickedCards] = useState([]);
   const [shuffledWordsEn, setShuffledWordsEn] = useState([]);
   const [shuffledWordsFr, setShuffledWordsFr] = useState([]);
-  const [cardClass, setCardClass] = useState(classes.word);
 
   const clearedCardsObj = props.setClearedCards;
 
@@ -51,14 +50,14 @@ const Words = props => {
       translationMap[`${first}`] !== second ||
       getKeyByValue(translationMap, `${first}`) !== second
     ) {
-      alert("Invalid match. Try again :)");
+      alert("Invalid match. Try again 🙂");
     }
   };
 
-  console.log(clickedCards);
-
   const cardClickHandler = e => {
     const word = e.target.id;
+
+    console.log(word);
 
     if (clickedCards.length === 1) {
       setClickedCards(prev => [...prev, word]);
@@ -95,6 +94,7 @@ const Words = props => {
       }
       onClick={!props.clearedCards[wordEn.word] ? cardClickHandler : null}
       key={wordEn.key}
+      id={wordEn.word}
     >
       <li id={wordEn.word}>{wordEn.word}</li>
     </Card>
@@ -109,6 +109,7 @@ const Words = props => {
       }
       onClick={!props.clearedCards[wordFr.word] ? cardClickHandler : null}
       key={wordFr.key}
+      id={wordFr.word}
     >
       <li id={wordFr.word}>{wordFr.word}</li>
     </Card>
