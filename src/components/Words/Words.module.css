@@ -15,7 +15,8 @@
 .word__paired {
   text-align: center;
   color: rgb(6, 172, 1);
-  opacity: 45%;
+  background-color: white;
+  opacity: 55%;
   transition: 0.3s;
 }
 

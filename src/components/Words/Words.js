@@ -36,6 +36,13 @@ const Words = props => {
 
   const evaluate = props => {
     const [first, second] = clickedCards;
+    const wordOne = document.getElementById(first);
+    const wordTwo = document.getElementById(second);
+
+    const backToDefault = () => {
+      wordOne.style.background = "white";
+      wordTwo.style.background = "white";
+    };
 
     if (
       translationMap[`${first}`] === second ||
@@ -50,14 +57,21 @@ const Words = props => {
       translationMap[`${first}`] !== second ||
       getKeyByValue(translationMap, `${first}`) !== second
     ) {
-      alert("Invalid match. Try again 🙂");
+      wordOne.style.background = "crimson";
+      wordTwo.style.background = "crimson";
+
+      setTimeout(backToDefault, 1000);
     }
   };
 
   const cardClickHandler = e => {
     const word = e.target.id;
 
-    console.log(word);
+    const cardBackgroundColour = () => {
+      document.getElementById(word).style.background = "#dee6b4";
+    };
+
+    cardBackgroundColour();
 
     if (clickedCards.length === 1) {
       setClickedCards(prev => [...prev, word]);
