@@ -9,8 +9,8 @@ html {
 }
 
 body {
-  margin-left: 5rem;
-  margin-right: 5rem;
+  display: flex;
+  justify-content: center;
   background-color: #98ff98;
 }
 

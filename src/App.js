@@ -8,6 +8,8 @@ function App() {
   const [modalIsShown, setModalIsShown] = useState(false);
   const [clearedCards, setClearedCards] = useState({});
 
+  console.log(clearedCards);
+
   const closeModalHandler = () => {
     setModalIsShown(false);
     setClearedCards({});

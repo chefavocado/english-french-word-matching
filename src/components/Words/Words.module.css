@@ -3,20 +3,15 @@
 }
 
 .word:hover {
-  background-color: rgb(255, 247, 102);
+  background-color: rgb(151, 233, 255);
   transition: 0.4s;
-}
-
-.word__clicked {
-  text-align: center;
-  opacity: 80%;
 }
 
 .word__paired {
   text-align: center;
   color: rgb(6, 172, 1);
   background-color: white;
-  opacity: 55%;
+  opacity: 40%;
   transition: 0.3s;
 }
 
@@ -32,6 +27,7 @@
 
 .row ul {
   list-style-type: none;
+  max-width: center;
 }
 
 .column {
