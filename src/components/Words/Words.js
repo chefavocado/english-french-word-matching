@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-import Card from "../UI/Card";
-import classes from "./Words.module.css";
-import wordsEn from "../../data/english";
-import wordsFr from "../../data/french";
+import Card from '../UI/Card';
+import classes from './Words.module.css';
+import wordsEn from '../../data/english';
+import wordsFr from '../../data/french';
 
 const Words = props => {
   const [clickedCards, setClickedCards] = useState([]);
@@ -23,11 +23,11 @@ const Words = props => {
   };
 
   const translationMap = {
-    Hello: "Bonjour",
-    Cat: "Chat",
-    Strawberry: "Fraise",
-    Boy: "Garçon",
-    I: "Je",
+    Hello: 'Bonjour',
+    Cat: 'Chat',
+    Strawberry: 'Fraise',
+    Boy: 'Garçon',
+    I: 'Je',
   };
 
   const getKeyByValue = (object, value) => {
@@ -40,8 +40,8 @@ const Words = props => {
     const wordTwo = document.getElementById(second);
 
     const backToDefault = () => {
-      wordOne.style.background = "white";
-      wordTwo.style.background = "white";
+      wordOne.style.background = 'white';
+      wordTwo.style.background = 'white';
     };
 
     if (
@@ -57,8 +57,8 @@ const Words = props => {
       translationMap[`${first}`] !== second ||
       getKeyByValue(translationMap, `${first}`) !== second
     ) {
-      wordOne.style.background = "crimson";
-      wordTwo.style.background = "crimson";
+      wordOne.style.background = 'crimson';
+      wordTwo.style.background = 'crimson';
 
       setTimeout(backToDefault, 1000);
     }
@@ -68,7 +68,7 @@ const Words = props => {
     const word = e.target.id;
 
     const cardBackgroundColour = () => {
-      document.getElementById(word).style.background = "#dee6b4";
+      document.getElementById(word).style.background = '#dee6b4';
     };
 
     cardBackgroundColour();
@@ -84,7 +84,7 @@ const Words = props => {
     if (clickedCards.length === 2) {
       setTimeout(evaluate);
     }
-  }, [clickedCards]);
+  });
 
   useEffect(() => {
     setShuffledWordsEn(shuffleArray(wordsEn));
@@ -97,14 +97,14 @@ const Words = props => {
     if (clearedWordsLength === 10) {
       return props.showModal(true);
     }
-  }, [props.clearedCards]);
+  });
 
   const mappedWordsEn = shuffledWordsEn.map(wordEn => (
     <Card
       className={
         !props.clearedCards[wordEn.word]
           ? classes.word
-          : classes["word__paired"]
+          : classes['word__paired']
       }
       onClick={!props.clearedCards[wordEn.word] ? cardClickHandler : null}
       key={wordEn.key}
@@ -119,7 +119,7 @@ const Words = props => {
       className={
         !props.clearedCards[wordFr.word]
           ? classes.word
-          : classes["word__paired"]
+          : classes['word__paired']
       }
       onClick={!props.clearedCards[wordFr.word] ? cardClickHandler : null}
       key={wordFr.key}
