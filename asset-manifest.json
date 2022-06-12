@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/french-english-word-matching/static/css/main.7d1e97de.css",
+    "main.js": "/french-english-word-matching/static/js/main.8078241b.js",
+    "index.html": "/french-english-word-matching/index.html",
+    "main.7d1e97de.css.map": "/french-english-word-matching/static/css/main.7d1e97de.css.map",
+    "main.8078241b.js.map": "/french-english-word-matching/static/js/main.8078241b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d1e97de.css",
+    "static/js/main.8078241b.js"
+  ]
+}
