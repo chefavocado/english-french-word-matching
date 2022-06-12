@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Word Matching (English & French)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+Insired by Duolingo, the goal of this project was to create a fun game to practice my React skills while learning French simultaneously! Two columns are displayed. The column on the left contains a list of unqiue english words while the column on the right contains a list of their french counter parts. The objective of the of game is to match the words correctly in any order, english with french or vice versa. If the words are paired correctly, they change in appearance to indicate so and become disabled preventing the user from reselect them. If they are paired incorrectly, the selected words will flash red to indicate the incorrect pairing to the user and unselect them so they can try again. Once all 10 words are correctly matched, a modal is diaplyed to congradualte the user for their efforts. The modal also displays a restart button. If clicked, the game restarts and the words are shuffled in a different order.
 
-In the project directory, you can run:
+## What I Learned
 
-### `npm start`
+In this project I incorporated a portal for the first time for a clean and simple way to display a modal on the page to "break out" of it's parent component. It's easy to build a portal and make it reusable to serve more than one purpose if needed (examples: dialogs, tool tips, etc.)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+I gained additional experience managaging state with objects and arrays while building out the logic responsible for shuffling the french and english words and keeping track of selected/matched words. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+This was the first project where I used the useEffect hook to evaluate matched words and determine if they are truthy or falsy. I also used this hook for the word shuffling and modal toggle logic. 
 
-### `npm test`
+To ensure the user can match english and french words in any order (english with french or vice versa), I created a translation map object. I then created a function which returns an object key based on the provided value. The function accepts two arguments: an object and a value. If the value strickly equals a key's value in the object, the function will return the name of the key. This is crucial to successfully allow the user to pair words in any order. The reason being is because, it allows the selected words to be evaluated with the translation map object with the key or the value. Prior to building this project, I only knew how to obtain values with keys instead of the otherway around so this was a fun learning experience. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+For the evaluation logic I wrote to determine if words were matched correctly, I gained additional experience with template literals and the built-in setTimeout method to dynamically evaluate any word pairing and determine if the pairing was truthy or falsy to reflect the appropriate styling change. 
 
-### `npm run build`
+I incorporated the ternary operator for the first time to dynamically change styling based on state changes. This is a fun easy-to-read approach compared to traditional if/else statements.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Technologies
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+HTML, CSS, JaveScript, React
