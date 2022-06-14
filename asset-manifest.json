@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/english-french-word-matching/static/css/main.7d1e97de.css",
-    "main.js": "/english-french-word-matching/static/js/main.8078241b.js",
-    "index.html": "/english-french-word-matching/index.html",
-    "main.7d1e97de.css.map": "/english-french-word-matching/static/css/main.7d1e97de.css.map",
-    "main.8078241b.js.map": "/english-french-word-matching/static/js/main.8078241b.js.map"
+    "main.css": "/word-matching-game/static/css/main.7d1e97de.css",
+    "main.js": "/word-matching-game/static/js/main.8078241b.js",
+    "index.html": "/word-matching-game/index.html",
+    "main.7d1e97de.css.map": "/word-matching-game/static/css/main.7d1e97de.css.map",
+    "main.8078241b.js.map": "/word-matching-game/static/js/main.8078241b.js.map"
   },
   "entrypoints": [
     "static/css/main.7d1e97de.css",
